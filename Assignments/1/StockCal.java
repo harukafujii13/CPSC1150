@@ -3,30 +3,30 @@ import java.util.Scanner;
 public class StockCal {
   public static void main(String[] args){
 
-    double price, rate, commission, net, shareVal;
+    double stockPrice, commissionRate, commission, netProceeds, shareVal;
     int shareNum;
 
     Scanner input = new Scanner(System.in);
 
     System.out.println("Enter stock price:");
-    price = input.nextDouble();
+    stockPrice = input.nextDouble();
 
-    System.out.println("Enter number of share:");
+    System.out.println("Enter number of shares:");
     shareNum = input.nextInt();
 
-    System.out.println("Enter commission:");
-    rate = input.nextDouble();
+    System.out.println("Enter commission rate (as a percentage):");
+    commissionRate = input.nextDouble();
 
-    shareVal = price * shareNum;
+    shareVal = stockPrice * shareNum;
 
-    commission = Math.round(shareVal * (rate / 100));
+    commission = shareVal * (commissionRate / 100);
 
-    net = shareVal - commission;
+    netProceeds = shareVal - commission;
 
-    System.out.println("Value of share: " + shareVal);
-    System.out.println("Commission: " + commission);
-    System.out.println("Net proceed: " + net);
+    System.out.printf("Value of share: $%.2f\n", shareVal);
+    System.out.printf("Commission: $%.4f\n", commission);
+    System.out.printf("Net proceeds: $%.4f\n", netProceeds);
 
-
+    input.close();
   }
 }
