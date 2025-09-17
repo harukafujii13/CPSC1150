@@ -55,16 +55,12 @@ public class StockCal {
     System.out.println("Enter commission rate (as a percentage):");
     commissionRate = input.nextDouble();
     
-    // calculate the value of the shares
     shareVal = stockPrice * shareNum;
     
-    // calculate the commission
     commission = shareVal * (commissionRate / 100);
 
-    // calculate the net proceeds
     netProceeds = shareVal - commission;
 
-    // display the value of the shares, commission and net proceeds
     System.out.printf("Value of share: $%.2f\n", shareVal);
     System.out.printf("Commission: $%.4f\n", commission);
     System.out.printf("Net proceeds: $%.4f\n", netProceeds);
